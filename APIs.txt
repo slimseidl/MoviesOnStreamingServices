@@ -1,0 +1,9 @@
+
+To return all streaming sources: 
+response = requests.get(f'https://api.watchmode.com/v1/sources/?apiKey={API_Key}').json()
+
+To find streaming sources for a film:
+# Streaming source API https://api.watchmode.com/v1/title/{title_id}/sources/ - need the movie id to get streaming info
+
+To obtain movie details, title, id, plot, etc..:
+# Movie Details 'https://api.watchmode.com/v1/title/{movie ID}/details/?apiKey=6wOeHoK6T1dSQdtzeKfywmz3vgF6XEJncwjxHygA'
