@@ -39,24 +39,34 @@ for movie_id in movie_id_list:
     
 print(select_list)
 
+viewings = []
 for id in select_list:
     response = requests.get(f'https://api.watchmode.com/v1/title/{id}/sources/?apiKey={API_Key}').json()
     for item in response:
-        if item["region"] == 'US':
+        if item["region"] == 'US' and item["type"] in ('free','sub'):
             service = item["name"]
-            type = item["type"]
-            if item["type"] == "buy" or item["type"] == "rent":
-                price = item["price"]
-            elif item["type"] == "sub":
-                price = "Included in Subscription"
-            elif item["type"] == "free":
-                price = "free"
+            if item["type"] == "sub":
+                type_ = "Subscription"
             else:
-                price = "No price information"    
+                type = "Free"
+            # format = item["format"]
+            # if item["type"] == "buy" or item["type"] == "rent": If decide to add rent or buy 
+                # price = item["price"]
+            # elif item["type"] == "sub":
+            #     price = "Included in Subscription"
+            # elif item["type"] == "free":
+            #     price = "free"
+            # else:
+            #     price = "No price information"    
         else:
             continue
+        viewings.append((service, type_))
 
-        print(f'Service: {service} | Type: {type} | Price: {price}')
+viewings.sort(key=lambda x: x[0])
+
+print(f'The selected Movie / Show is available on the following streaming services:\n')
+for service, type_ in viewings:
+    print(f'Service: {service} | Type: {type_}')
 
 
 
