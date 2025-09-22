@@ -7,3 +7,6 @@ To find streaming sources for a film:
 
 To obtain movie details, title, id, plot, etc..:
 # Movie Details 'https://api.watchmode.com/v1/title/{movie ID}/details/?apiKey=6wOeHoK6T1dSQdtzeKfywmz3vgF6XEJncwjxHygA'
+
+Cast / Crew by title id 
+https://api.watchmode.com/v1/title/{title_id}/cast-crew/
