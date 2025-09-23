@@ -48,15 +48,15 @@ Currently supports US region, free and subscription services
 You also need a free API key from Watchmode.
 
 📂 Project Structure
-MoviesOnStreamingServices/
-│
-├── instance.py             # Example script: create an instance and search
-├── Stream.py               # Main class with methods:
-│   ├── get_matches()       # Gets candidate matches by title
-│   ├── get_movie_info()    # Gets details (title, rating, runtime, plot, etc.)
-│   ├── get_streaming_services()  # Gets streaming providers for each match
-│   └── print_info()        # Prints formatted results
-├── README.md               # Project documentation
+MoviesOnStreamingServices
+
+instance.py                 # Example script: create an instance and search
+Stream.py                   # Main class with methods:
+- get_matches()             # Gets candidate matches by title
+- get_movie_info()          # Gets details (title, rating, runtime, plot, etc.)
+- get_streaming_services()  # Gets streaming providers for each match
+- print_info()              # Prints formatted results
+- README.md                 # Project documentation
 
 ▶️ Usage
 
