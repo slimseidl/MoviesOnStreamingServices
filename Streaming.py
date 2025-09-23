@@ -14,7 +14,7 @@ for data in response["title_results"]:
     movie_id_list.append(data["id"])
     # print(data["id"], data["name"])
 
-print(movie_id_list)
+# print(movie_id_list)
 select_list = []
 for movie_id in movie_id_list:
     response = requests.get(f'https://api.watchmode.com/v1/title/{movie_id}/details/?apiKey={API_Key}').json()
