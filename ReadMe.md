@@ -51,6 +51,7 @@ You also need a free API key from Watchmode.
 MoviesOnStreamingServices
 
 instance.py                 # Example script: create an instance and search
+
 Stream.py                   # Main class with methods:
 - get_matches()             # Gets candidate matches by title
 - get_movie_info()          # Gets details (title, rating, runtime, plot, etc.)
