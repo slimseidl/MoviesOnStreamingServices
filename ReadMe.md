@@ -6,7 +6,6 @@ A Python project that lets you search for a movie or TV show by title and see:
 
     - All US streaming services where it’s available (subscription or free)
 
-    - Select movie from matches and see rent / buy availability
 
 This project uses the Watchmode API to fetch movie/show metadata and streaming service availability.
 
@@ -108,6 +107,10 @@ Long plot descriptions are printed in full — you may want to truncate if displ
 📈 Future Improvements
 
 Command-line arguments for faster searches
+
+Select option from results and see cast / crew information
+
+Select option from results and see buy/rent availability
 
 Export results to JSON/CSV
 

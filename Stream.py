@@ -72,6 +72,8 @@ class Stream():
         movies = self.get_movie_info()
         services = self.get_streaming_services()
 
+        match_list = []
+        match_counter = 0
         for movie in movies:
             primary_id = movie[0]
             name = movie[1]
@@ -81,8 +83,10 @@ class Stream():
             genre = movie[5]
             rating = movie[6]
             show_type = movie[7]
+            match_counter+=1
+            match_list.append((match_counter,primary_id))
 
-            print(f'Title: {name} | Rating: {rating} | Genre: {genre} | Type: {show_type} | Runtime: {runtime} | Release Year: {release_year}'
+            print(f'Title: {name} | Rating: {rating} | Genre: {genre} | Type: {show_type} | Runtime: {runtime} | Release Year: {release_year} | Match No. {match_counter}'
                     f'\n\nPlot: {plot}\n')
             
             movie_services = [(svc[1], svc[2]) for svc in services if svc[0] == primary_id] # consolidated loop into single line
@@ -105,6 +109,35 @@ class Stream():
                 print('No streaming services available.')
 
             print(f'\n' + "-"*80 + "\n")
+
+    #     choice = int(input("Enter the match number of the movie or show you'd like more information for:"))
+
+    #     movie_id = None 
+    #     for match_no, primary_id in match_list:
+    #         if match_no == choice:
+    #             movie_id = primary_id
+    #             break
+
+    #     print(f'Now fetching cast and crew information for {name} {show_type} {release_year}')
+
+    #     cast_crew = self.get_cast_crew(movie_id)
+
+    #     if "cast" in cast_crew:
+    #         print("Cast:")
+    #         for member in cast_crew["cast"][:5]:
+    #             print(f' - {member["name"]} as {member.get("character_name", "N/A")}')
+
+    #     if "crew" in cast_crew:
+    #         print("\nCrew:")
+    #         for member in cast_crew["crew"][:5]:
+    #             print(f' - {member["name"]} ({member.get("job", "N/A")})')
+
+    
+    # def get_cast_crew(self,title_id):
+    #     response = requests.get(f'https://api.watchmode.com/v1/title/{title_id}/cast-crew/?apiKey={API_Key}').json()
+    #     return response
+
+
 
             
 
